@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/magnum_opus/static/css/main.c6bebc4e.css",
+    "main.js": "/magnum_opus/static/js/main.650e0ace.js",
+    "index.html": "/magnum_opus/index.html",
+    "main.c6bebc4e.css.map": "/magnum_opus/static/css/main.c6bebc4e.css.map",
+    "main.650e0ace.js.map": "/magnum_opus/static/js/main.650e0ace.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6bebc4e.css",
+    "static/js/main.650e0ace.js"
+  ]
+}
