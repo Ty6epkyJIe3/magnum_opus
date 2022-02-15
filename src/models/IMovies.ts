@@ -1,6 +1,6 @@
 import {IMovie} from './IMovie';
 
 export interface IMovies{
-    page: number;
+    page?: number;
     results: IMovie[];
 }

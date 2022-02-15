@@ -92,3 +92,11 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 50px auto;
+}

@@ -6,17 +6,48 @@ const language = 'en-US';
 
 export const moviesAPI = createApi({
   reducerPath: 'moviesAPI',
-  baseQuery: fetchBaseQuery({baseUrl: 'https://api.themoviedb.org/3'}),
+  baseQuery: fetchBaseQuery({baseUrl: 'https://api.themoviedb.org/3/movie'}),
   endpoints: (build) => ({
     fetchPopularMovies: build.query<IMovies, number>({
       query: ( page: number ) => ({
-        url: '/movie/popular',
+        url: '/popular',
         params: {
           api_key: API_KEY,
           language: language,
           page: page
         }
       })
-    })
+    }),
+    fetchTopRatedMovies: build.query<IMovies, number>({
+      query: ( page: number ) => ({
+        url: '/top_rated',
+        params: {
+          api_key: API_KEY,
+          language: language,
+          page: page
+        }
+      })
+    }),
+    fetchNowPlayingMovies: build.query<IMovies, string>({
+      query: ( region: string) => ({
+        url: '/now_playing',
+        params: {
+          api_key: API_KEY,
+          language: language,
+          page: 1,
+          region: region
+        }
+      })
+    }),
+    fetchUpcomingMovies: build.query<IMovies, number>({
+      query: ( page: number ) => ({
+        url: '/upcoming',
+        params: {
+          api_key: API_KEY,
+          language: language,
+          page: page
+        }
+      })
+    }),
   })
 });
