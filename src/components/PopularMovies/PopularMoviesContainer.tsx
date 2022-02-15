@@ -10,7 +10,7 @@ export const PopularMoviesContainer = () => {
     <PopularMoviesContainerStyled>
       {isLoading && <h1>Идет загрузка</h1>}
       {error && <h1>Ошибка</h1>}
-      {movies && movies.results.map( movie =>
+      {movies && movies.results.map(movie =>
         <MovieCard key={nanoid()} movie={movie}/>)}
     </PopularMoviesContainerStyled>
   );
