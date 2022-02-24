@@ -1,17 +1,22 @@
-import React, {FC} from 'react';
-import {IMovie} from '../../models/IMovie';
-import {MovieCardStyled} from './MovieCard.styles';
+import React, { FC } from 'react';
+import { IMovie } from '../../models/IMovie';
+import { MovieCardStyled } from './MovieCard.styles';
+import {Link} from 'react-router-dom';
 
 interface MoviesItemProps {
-    movie: IMovie
+  movie: IMovie;
 }
 
-export const MovieCard: FC<MoviesItemProps> = ({movie}) => {
-  const API_KEY = '7e9c3cc2569e2d65abfce04276b956fb';
+export const MovieCard: FC<MoviesItemProps> = ({ movie }) => {
   return (
     <MovieCardStyled>
-      <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}/>
-      <p>{movie.title}</p>
+      <Link key={movie.id} to={`/movies/${movie.id}`}>
+        <img
+          src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+          alt={movie.title}
+        />
+        <p>{movie.title}</p>
+      </Link>
     </MovieCardStyled>
   );
 };

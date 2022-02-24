@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-export const NavBarStyled = styled.div`
+export const HeaderStyled = styled.div`
   position: sticky;
   top: 0;
-  width: auto;
+  width: 100%;
   height: 50px;
   background-color: #704cb6;
   z-index: 100;
 `;
-

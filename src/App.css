@@ -1,41 +1,4 @@
 
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
 .container {
   display: inline-block;
   position: relative;
@@ -46,10 +9,10 @@
 }
 
 .container:hover {
-  background-color: #5c38a1
+  background-color: #5c38a1;
 }
 
-.bar1, .bar2, .bar3 {
+.bar {
   width: 35px;
   height: 5px;
   background-color: #333;
@@ -62,35 +25,13 @@
   padding-top: 4px;
   position: absolute;
   top: 100%;
-  background-color: #fff;
+  background-color: rgba(136, 136, 136, 0.5);
   z-index: 9999;
-  height: 200px;
-  width: calc(50vw - 5px);
-  border-radius: 5px;
-  border: 1px solid dimgray;
+  width: 100vw;
 }
 
 .container:hover .dropdown__content {
   display: block;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 .list {
@@ -99,4 +40,53 @@
   flex-wrap: wrap;
   max-width: 1300px;
   margin: 50px auto;
+}
+
+.description_block {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 25%;
+  left: 5%;
+}
+
+.i_position_absolute_top {
+  font-size: 8vmin;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1.5vmin;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000000;
+  text-shadow: 4px 4px 0px #A3A3A3;
+}
+
+.genre {
+  background-color: #ba2323;
+  padding: 1vmin;
+  margin-right: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 2vmin;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.description__text {
+  font-size: 3vmin;
+  color: white;
+  font-weight: bold;
+  margin-top: 1.5vmin;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+  text-shadow: 4px 4px 0px #A3A3A3;
+  width: 45vw
 }
