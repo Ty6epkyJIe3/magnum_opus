@@ -10,7 +10,7 @@ export const PopularMovies = () => {
     isLoading,
   } = moviesAPI.useFetchPopularMoviesQuery(1);
   return (
-    <div>
+    <>
       <Header />
       <div className="list">
         {isLoading && <h1>Идет загрузка</h1>}
@@ -20,6 +20,6 @@ export const PopularMovies = () => {
             <MovieCard key={movie.id} movie={movie} />
           ))}
       </div>
-    </div>
+    </>
   );
 };

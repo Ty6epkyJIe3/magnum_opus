@@ -29,14 +29,14 @@ export const moviesAPI = createApi({
         },
       }),
     }),
-    fetchNowPlayingMovies: build.query<IMovies, string>({
-      query: (region: string) => ({
+    fetchNowPlayingMovies: build.query<IMovies, number>({
+      query: (page: number) => ({
         url: "/now_playing",
         params: {
           api_key: API_KEY,
           language: language,
-          page: 1,
-          region: region,
+          page: page,
+          region: 'RU',
         },
       }),
     }),
@@ -53,6 +53,15 @@ export const moviesAPI = createApi({
     fetchDetails: build.query<IMovieDetails, string | undefined>({
       query: (movie_id: string) => ({
         url: `${movie_id}`,
+        params: {
+          api_key: API_KEY,
+          language: language,
+        },
+      }),
+    }),
+    fetchMoviesByGenre: build.query<IMovies, string | undefined>({
+      query: (genre_id: string) => ({
+        url: `${genre_id}`,
         params: {
           api_key: API_KEY,
           language: language,

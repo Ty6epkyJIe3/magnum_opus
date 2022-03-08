@@ -9,7 +9,7 @@ interface GenreButtonProps {
 
 export const GenreButton: FC<GenreButtonProps> = ({genre}) => {
   return (
-    <Link  to={`/genre/${genre.name}`}>
+    <Link  to={`/genres/${genre.name}`}>
       <GenreButtonStyled>
         {genre.name}
       </GenreButtonStyled>

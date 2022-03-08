@@ -10,7 +10,7 @@ export const UpcomingMovies = () => {
     isLoading,
   } = moviesAPI.useFetchUpcomingMoviesQuery(1);
   return (
-    <div>
+    <>
       <Header />
       <div className="list">
         {isLoading && <h1>Идет загрузка</h1>}
@@ -20,6 +20,6 @@ export const UpcomingMovies = () => {
             <MovieCard key={movie.id} movie={movie} />
           ))}
       </div>
-    </div>
+    </>
   );
 };
