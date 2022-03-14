@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/magnum_opus/Home/static/css/main.f8392a07.css",
-    "main.js": "/magnum_opus/Home/static/js/main.facc17b0.js",
+    "main.js": "/magnum_opus/Home/static/js/main.d817f620.js",
     "index.html": "/magnum_opus/Home/index.html",
     "main.f8392a07.css.map": "/magnum_opus/Home/static/css/main.f8392a07.css.map",
-    "main.facc17b0.js.map": "/magnum_opus/Home/static/js/main.facc17b0.js.map"
+    "main.d817f620.js.map": "/magnum_opus/Home/static/js/main.d817f620.js.map"
   },
   "entrypoints": [
     "static/css/main.f8392a07.css",
-    "static/js/main.facc17b0.js"
+    "static/js/main.d817f620.js"
   ]
 }
