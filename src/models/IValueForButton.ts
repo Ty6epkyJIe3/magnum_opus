@@ -1,4 +1,4 @@
-export interface IGenre {
+export interface IValueForButton {
     id: number;
     name: string;
 }

@@ -7,4 +7,7 @@ export const HeaderStyled = styled.div`
   height: 50px;
   background-color: #704cb6;
   z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;

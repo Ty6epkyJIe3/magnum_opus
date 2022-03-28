@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
+import {createApi, FetchArgs, fetchBaseQuery} from '@reduxjs/toolkit/dist/query/react';
 import { IMovies } from "../models/IMovies";
 import {IMovieDetails} from "../models/IMovieDetails";
 
@@ -7,64 +7,46 @@ const language = "en-US";
 
 export const moviesAPI = createApi({
   reducerPath: "moviesAPI",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://api.themoviedb.org/3/movie" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://api.themoviedb.org/3/" }),
   endpoints: (build) => ({
-    fetchPopularMovies: build.query<IMovies, number>({
-      query: (page: number) => ({
-        url: "/popular",
-        params: {
-          api_key: API_KEY,
-          language: language,
-          page: page,
-        },
-      }),
-    }),
-    fetchTopRatedMovies: build.query<IMovies, number>({
-      query: (page: number) => ({
-        url: "/top_rated",
-        params: {
-          api_key: API_KEY,
-          language: language,
-          page: page,
-        },
-      }),
-    }),
-    fetchNowPlayingMovies: build.query<IMovies, number>({
-      query: (page: number) => ({
-        url: "/now_playing",
-        params: {
-          api_key: API_KEY,
-          language: language,
-          page: page,
-          region: 'RU',
-        },
-      }),
-    }),
-    fetchUpcomingMovies: build.query<IMovies, number>({
-      query: (page: number) => ({
-        url: "/upcoming",
-        params: {
-          api_key: API_KEY,
-          language: language,
-          page: page,
-        },
-      }),
-    }),
     fetchDetails: build.query<IMovieDetails, string | undefined>({
-      query: (movie_id: string) => ({
-        url: `${movie_id}`,
+      query: (movie_id) => ({
+        url: `/movie/${movie_id}`,
         params: {
           api_key: API_KEY,
           language: language,
         },
       }),
     }),
-    fetchMoviesByGenre: build.query<IMovies, string | undefined>({
-      query: (genre_id: string) => ({
-        url: `${genre_id}`,
+    fetchMoviesByGenre: build.query<IMovies, { current_page: number, genre_id: number}>({
+      query: ({current_page, genre_id}) => ({
+        url: '/discover/movie',
         params: {
           api_key: API_KEY,
           language: language,
+          sort_by: 'popularity.desc',
+          page: current_page,
+          with_genres: genre_id
+        },
+      }),
+    }),
+    fetchMoviesByUrlType: build.query<IMovies, { current_page: number, option: string } >({
+      query: ({current_page, option}) => ({
+        url: `/movie/${option}`,
+        params: {
+          api_key: API_KEY,
+          language: language,
+          page: current_page,
+        },
+      }),
+    }),
+    fetchMoviesWithKeywords: build.query<IMovies, string>({
+      query: (keyword) => ({
+        url: '/search/movie',
+        params: {
+          api_key: API_KEY,
+          query: keyword,
+          page: 1,
         },
       }),
     }),

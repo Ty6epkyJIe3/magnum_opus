@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const GenreButtonStyled = styled.div`
-  background-color: #ba2323;
+export const NavigationButtonStyled = styled.div`
+  background-color: #9475d1;
   padding: 10px;
   font-family: 'Open Sans', sans-serif;
   font-size: 100%;

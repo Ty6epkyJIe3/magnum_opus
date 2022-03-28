@@ -4,19 +4,12 @@
   position: relative;
   cursor: pointer;
   text-align: left;
-  padding: 5px 10px 6px 10px;
-  height: 39px;
-}
+  height: 50px;
+  font-size: 20px;
+ }
 
 .container:hover {
   background-color: #5c38a1;
-}
-
-.bar {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
 }
 
 .dropdown__content {
@@ -36,25 +29,25 @@
 
 .list {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 1300px;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 
 .description_block {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 25%;
+  bottom: 5%;
   left: 5%;
 }
 
 .i_position_absolute_top {
-  font-size: 8vmin;
+  font-size: 8vw;
   color: white;
   font-weight: bold;
-  margin-bottom: 1.5vmin;
+  margin-bottom: 1.5vw;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #000000;
   text-shadow: 4px 4px 0px #A3A3A3;
@@ -62,11 +55,11 @@
 
 .genre {
   background-color: #ba2323;
-  padding: 1vmin;
+  padding: 1vw;
   margin-right: 5px;
   color: white;
   font-weight: bold;
-  font-size: 2vmin;
+  font-size: 2vw;
   border-radius: 10px;
 }
 
@@ -87,6 +80,53 @@ a {
   margin-top: 1.5vmin;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000000;
-  text-shadow: 4px 4px 0px #A3A3A3;
+  text-shadow: 2px 2px 0px #A3A3A3;
   width: 45vw
 }
+
+.genre__block {
+  height: 4vw;
+}
+
+.genre_link {
+  height: 4vw;
+  bottom: 0;
+}
+
+.moviecard_title {
+  margin: 0;
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+  text-shadow: 2px 2px 0px #A3A3A3;
+}
+
+.active {
+  border: 3px solid black;
+}
+
+h1 {
+    text-transform: Uppercase;
+    margin: 2vw 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 7vw;
+    text-align: center;
+    color: #E4E5E6;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000000;
+    text-shadow: 2px 2px 0 #A3A3A3;
+}
+
+.svg-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: white;
+}
+

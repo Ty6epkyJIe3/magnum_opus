@@ -3,27 +3,53 @@ import { moviesAPI } from '../../services/MoviesService';
 import { MovieCard } from '../../components/MovieCard/MovieCard';
 import { Header } from '../../components/Header/Header';
 import {useParams} from 'react-router-dom';
+import {Pagination} from '../../components/Pagination/Pagination';
+import {genres} from '../../utils/genres';
 
 export const MoviesByGenrePage = () => {
 
-  const {genre_id} = useParams();
+  const {genre_name} = useParams();
+    
+  const genre_id = genres.find(genre => genre.name === genre_name)!.id;
+
+  const [page, setPage] = useState(parseInt(sessionStorage.getItem(`${genre_name}_page`) as string));
+
+  sessionStorage.setItem(`${genre_name}_page`, isNaN(page) ? '1' : page.toString());
+
+  useEffect(() => {
+    sessionStorage.setItem(`${genre_name}_page`, page.toString());
+  }, [page]);
+
+  useEffect(() => {
+    document.title = `${genre_name}`;
+  });
+
+  const changePage = (chosen_page: number) => setPage(chosen_page);
+
+  const current_page = isNaN(page) ? 1 : page;
 
   const {
-    data: movies,
+    data,
     error,
     isLoading,
-  } = moviesAPI.useFetchPopularMoviesQuery(1);
+  } = moviesAPI.useFetchMoviesByGenreQuery({current_page,genre_id});
   return (
     <>
       <Header />
+      <h1>{genre_name}</h1>
       <div className="list">
         {isLoading && <h1>Идет загрузка</h1>}
         {error && <h1>Ошибка</h1>}
-        {movies &&
-              movies.results.map((movie) => (
-                <MovieCard key={movie.id} movie={movie} />
-              ))}
+        {data &&
+        data.results.map((movie) => (
+          <MovieCard key={movie.id} movie={movie}/>
+        ))}
       </div>
+      {data && <Pagination
+        changePage={changePage}
+        page={page}
+        total_pages={data.total_pages}
+      />}
     </>
   );
 };

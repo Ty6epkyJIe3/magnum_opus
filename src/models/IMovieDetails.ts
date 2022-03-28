@@ -1,7 +1,7 @@
 import {IMovie} from "./IMovie";
-import {IGenre} from "./IGenre";
+import {IValueForButton} from "./IValueForButton";
 
 export interface IMovieDetails extends IMovie {
-    genres: IGenre[];
+    genres: IValueForButton[];
     backdrop_path?: string;
 }

@@ -1,15 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PaginationStyled = styled.div`
-  width: 300px;
-  height: 500px;
-  transition: transform 0.2s;
-  background-color: white;
-  box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.16);
-  margin: 0 10px 30px 10px;
   text-align: center;
-  z-index: 99;
+  margin-bottom: 10px;
+`;
+
+export const PageButtonStyled = styled.span`
+  background-color: #704cb6;
+  color: white;
+  height: 34px;
+  width:34px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 34px;
+  margin: 3px;
   &:hover {
-    transform: scale(1.1);
+    background-color: #482787;
+    cursor: pointer;
   }
 `;

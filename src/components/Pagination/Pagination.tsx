@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import {PaginationStyled, PageButtonStyled} from './Pagination.styles';
 
 interface PaginationProps {
     changePage: (amount: number) => void;
@@ -31,10 +32,11 @@ export const Pagination:FC<PaginationProps> = ({changePage, page, total_pages}) 
   const pages_arr = arrayOfPages(page, total_pages);
 
   return (
-    <>
-      {pages_arr.map((page) => (
-        <button key={page} onClick={() => handleChangePage(page)}>{page}</button>
+    <PaginationStyled>
+      {pages_arr.map((p) => (
+        <PageButtonStyled className={p===page ? 'active' : ''} key={p} 
+          onClick={() => handleChangePage(p)}>{p}</PageButtonStyled>
       ))}
-    </>
+    </PaginationStyled>
   );
 };

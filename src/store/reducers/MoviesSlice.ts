@@ -2,36 +2,28 @@ import {IMovie} from '../../models/IMovie';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 interface MoviesState {
-  results: IMovie[];
-  isLoading: boolean;
-  error: string;
+  favorites: IMovie[];
 }
 
 const initialState: MoviesState = {
-  results: [],
-  isLoading: false,
-  error: ''
+  favorites: []
 };
 
-export const movieSlice = createSlice({
-  name: 'movies',
+export const favoritesSlice = createSlice({
+  name: 'favorites',
   initialState,
   reducers: {
-    fetchMovies(state) {
-      state.isLoading = true;
+    addMovie(state, action: PayloadAction<IMovie>) {
+      state.favorites.push(action.payload);
     },
-    fetchMoviesSuccess(state, action: PayloadAction<IMovie[]>) {
-      state.isLoading = false;
-      state.error = '';
-      state.results = action.payload;
+    deleteMovie(state, action: PayloadAction<number>) {
+      state.favorites = state.favorites.filter(
+        (movie) => movie.id !== action.payload
+      );
     },
-    fetchMoviesError(state) {
-      state.isLoading = false;
-      state.error = 'Произошла ошибка';
-    }
   }
 });
 
-//export const {fetchMovies, fetchMoviesSuccess, fetchMoviesError} = movieSlice.actions;
+export const {addMovie, deleteMovie} = favoritesSlice.actions;
 
-export const movieReducer = movieSlice.reducer;
+export const favoritesReducer = favoritesSlice.reducer;

@@ -1,6 +1,6 @@
-import { IGenre } from '../models/IGenre';
+import { IValueForButton } from '../models/IValueForButton';
 
-export const genres: IGenre[] = [
+export const genres: IValueForButton[] = [
   { id: 28, name: 'Action' },
   { id: 12, name: 'Adventure' },
   { id: 16, name: 'Animation' },
