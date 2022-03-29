@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/magnum_opus/static/css/main.cee16bd1.css",
-    "main.js": "/magnum_opus/static/js/main.3df25fe8.js",
+    "main.js": "/magnum_opus/static/js/main.5e657447.js",
     "static/media/theater.webp": "/magnum_opus/static/media/theater.9be65a4c92e90689d5e4.webp",
     "index.html": "/magnum_opus/index.html",
     "main.cee16bd1.css.map": "/magnum_opus/static/css/main.cee16bd1.css.map",
-    "main.3df25fe8.js.map": "/magnum_opus/static/js/main.3df25fe8.js.map"
+    "main.5e657447.js.map": "/magnum_opus/static/js/main.5e657447.js.map"
   },
   "entrypoints": [
     "static/css/main.cee16bd1.css",
-    "static/js/main.3df25fe8.js"
+    "static/js/main.5e657447.js"
   ]
 }
