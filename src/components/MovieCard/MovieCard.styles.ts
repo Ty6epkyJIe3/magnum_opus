@@ -25,7 +25,7 @@ export const HeartStyled = styled.div`
   &::before {
     font-size: 2em;
     color: white;
-    content: '♥';
+    content: "♥";
     position: absolute;
     left: 50%;
     top: 50%;
@@ -34,7 +34,7 @@ export const HeartStyled = styled.div`
   &::after {
     font-size: 2em;
     color: red;
-    content: '♥';
+    content: "♥";
     position: absolute;
     left: 50%;
     top: 50%;
@@ -44,4 +44,28 @@ export const HeartStyled = styled.div`
   &.liked::after {
     transform: translate(-50%, -50%) scale(1.1);
   }
+`;
+
+export const MissingImg = styled.div`
+  width: 300px;
+  height: 430px;
+  background-color: dimgray;
+`;
+
+export const ImgIcon = styled.div`
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 200px;
+  left: 130px;
+`;
+
+export const TitleStyled = styled.p`
+  margin: 0;
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+  text-shadow: 2px 2px 0px #a3a3a3;
 `;

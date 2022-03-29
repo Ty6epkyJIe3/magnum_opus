@@ -1,12 +1,14 @@
-import React, {FC} from 'react';
-import {BackdropStyled} from './Backdrop.styles';
+import React, { FC } from "react";
+import { BackdropStyled } from "./Backdrop.styles";
 
 interface MovieDetailsProps {
-    backdrop_path: string
+  backdrop_path?: string;
 }
 
-export const Backdrop:FC<MovieDetailsProps> = ({backdrop_path}) => {
+export const Backdrop: FC<MovieDetailsProps> = ({ backdrop_path }) => {
   return (
-    <BackdropStyled src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}/>
+    <BackdropStyled
+      src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
+    />
   );
 };

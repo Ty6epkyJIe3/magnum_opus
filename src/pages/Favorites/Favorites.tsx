@@ -1,27 +1,28 @@
-import React, {useEffect} from 'react';
-import { MovieCard } from '../../components/MovieCard/MovieCard';
-import { Header } from '../../components/Header/Header';
-import {useAppSelector} from '../../hooks/redux';
+import React, { useEffect } from "react";
+import { MovieCard } from "../../components/MovieCard/MovieCard";
+import { Header } from "../../components/Header/Header";
+import { useAppSelector } from "../../hooks/redux";
+import { CardsContainer } from "./Favorites.styles";
 
 export const Favorites = () => {
   useEffect(() => {
-    document.title = 'Favorites';
+    document.title = "Favorites";
   });
 
-  const {favorites} = useAppSelector((state => state.favorites));
+  const { favorites } = useAppSelector((state) => state.favorites);
 
   return (
     <>
       <Header />
       <h1>Favorites</h1>
-      <div className="list">
+      <CardsContainer>
         {favorites &&
-        favorites.map((movie) => (
-          <>
-            <MovieCard key={movie.id} movie={movie}/>
-          </>
-        ))}
-      </div>
+          favorites.map((movie) => (
+            <>
+              <MovieCard key={movie.id} movie={movie} />
+            </>
+          ))}
+      </CardsContainer>
     </>
   );
 };

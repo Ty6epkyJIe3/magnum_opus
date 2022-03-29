@@ -1,13 +1,17 @@
-import React from 'react';
-import {NavigationButton} from '../NavigationButton/NavigationButton';
-import {navigation} from '../../utils/navigation';
-import {NavigationBlockStyled} from './NavigationBlock.styles';
+import React, { FC } from "react";
+import { NavigationBlockStyled } from "./NavigationBlock.styles";
+import { NavigationButton } from "../NavigationButton/NavigationButton";
+import { IValueForButton } from "../../models/IValueForButton";
 
-export const NavigationBlock = () => {
+interface IDataForBlock {
+  data: IValueForButton[];
+}
+
+export const NavigationBlock: FC<IDataForBlock> = ({ data }) => {
   return (
     <NavigationBlockStyled>
-      {navigation.map((navigation) => (
-        <NavigationButton key={navigation.id} value={navigation} />
+      {data.map((item) => (
+        <NavigationButton key={item.id} value={item} />
       ))}
     </NavigationBlockStyled>
   );

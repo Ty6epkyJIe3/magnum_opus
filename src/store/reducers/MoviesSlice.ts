@@ -1,16 +1,16 @@
-import {IMovie} from '../../models/IMovie';
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { IMovie } from "../../models/IMovie";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface MoviesState {
   favorites: IMovie[];
 }
 
 const initialState: MoviesState = {
-  favorites: []
+  favorites: [],
 };
 
 export const favoritesSlice = createSlice({
-  name: 'favorites',
+  name: "favorites",
   initialState,
   reducers: {
     addMovie(state, action: PayloadAction<IMovie>) {
@@ -21,9 +21,9 @@ export const favoritesSlice = createSlice({
         (movie) => movie.id !== action.payload
       );
     },
-  }
+  },
 });
 
-export const {addMovie, deleteMovie} = favoritesSlice.actions;
+export const { addMovie, deleteMovie } = favoritesSlice.actions;
 
 export const favoritesReducer = favoritesSlice.reducer;

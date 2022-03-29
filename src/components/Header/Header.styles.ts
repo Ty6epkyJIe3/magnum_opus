@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderStyled = styled.div`
   position: sticky;
@@ -10,4 +10,5 @@ export const HeaderStyled = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  min-width: 400px;
 `;
